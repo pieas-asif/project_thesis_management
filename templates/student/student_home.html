@@ -2,15 +2,11 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1 class="display-4">Hello, Khairun Nesa Khan!</h1>
-    <p class="lead">Responsive Web Management Project With Swift Database. - M. Siamul Kabir</p>
+    <h1 class="display-4">{{ project.title }}!</h1>
+    <p class="lead">{{ project.subtitle }} - {{ project.teacher }}</p>
     <hr class="my-4">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac velit ac arcu euismod consequat sit amet a
-        metus. Duis nec condimentum ante, faucibus euismod turpis. Suspendisse non massa ac massa hendrerit vulputate ac
-        ac metus. Maecenas in ante velit. Phasellus congue sodales neque ac molestie. Proin enim mi, ullamcorper vitae
-        volutpat sed, varius eu leo. Phasellus tincidunt risus nec nisl fermentum, in molestie nulla blandit. Nunc
-        malesuada accumsan ligula nec eleifend. Donec efficitur porta odio vel ultrices.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Expand more</a>
+    <p>{{ project.description }}</p>
+    <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Expand more</a> -->
 </div>
 
 <div class="container">

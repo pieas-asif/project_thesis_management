@@ -11,7 +11,7 @@
   <p>Please click below "Profile Page" button to view the content of your profile. <br>Also if you want to log out,
     click on
     your user name on the navigation bar and click log out.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Profile Page</a>
+  <a class="btn btn-primary btn-lg" href="{% url 'profile' user.pk %}" role="button">Profile Page</a>
 
   {% else %}
 
