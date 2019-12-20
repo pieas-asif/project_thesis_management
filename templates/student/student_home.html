@@ -15,9 +15,14 @@
             1st Submisson
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special case treatment</h5>
-            <p class="card-text">The UI is great and responsive, Need more database queries.</p>
+            <h5 class="card-title">{{ project.first_def_title }}</h5>
+            {% if project.first_def_title == "Soon" %}
+            <p class="card-text">{{ project.first_def_time }}</p>
+            <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.first_def_desc }}</p>
             <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
         </div>
     </div>
     <div class="card" style="margin-bottom: 20px;">
@@ -25,19 +30,29 @@
             2nd Submisson
         </div>
         <div class="card-body">
-            <h5 class="card-title">Soon</h5>
-            <p class="card-text">15-12-2019</p>
+            <h5 class="card-title">{{ project.mid_def_title }}</h5>
+            {% if project.mid_def_title == "Soon" %}
+            <p class="card-text">{{ project.mid_def_time }}</p>
             <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.mid_def_desc }}</p>
+            <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
         </div>
     </div>
     <div class="card" style="margin-bottom: 20px;">
         <div class="card-header">
-            3st Submisson
+            Final Submisson
         </div>
         <div class="card-body">
-            <h5 class="card-title">Soon</h5>
-            <p class="card-text">25-12-2019</p>
+            <h5 class="card-title">{{ project.final_def_title }}</h5>
+            {% if project.final_def_title == "Soon" %}
+            <p class="card-text">{{ project.final_def_time }}</p>
             <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.final_def_desc }}</p>
+            <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
         </div>
     </div>
 
