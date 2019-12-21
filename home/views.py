@@ -17,5 +17,5 @@ class ProfileView(DetailView):
 
 class FormSubmissonView(CreateView):
     model = ProjectModel
-    fields = ('student_key', 'title', 'subtitle', 'teacher', 'description')
+    fields = ('title', 'subtitle', 'teacher', 'description',)
     template_name = 'student/create_form.html'

@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 
 class ProjectModel(models.Model):
     student_key = models.OneToOneField(
-        get_user_model(),
+        'auth.user',
         on_delete=models.CASCADE,
         primary_key=True,
     )
@@ -29,3 +30,6 @@ class ProjectModel(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('home')
