@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Project Thesis Management System</h1>
+        <p class="lead">All Project Proposal are down below.</p>
+    </div>
+</div>
+<div class="container">
+    {% for project in projects %}
+    <div class="card mb-2">
+        <div class="card-header">
+            {{ project.student_key.first_name }} {{ project.student_key.last_name }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description|truncatewords:50 }}</p>
+            <a href="{% url 'teacher_detail' project.pk %}" class="btn btn-primary">See Details</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

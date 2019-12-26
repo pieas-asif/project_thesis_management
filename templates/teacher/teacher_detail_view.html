@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">{{ project.title }}!</h1>
+    <p class="lead">{{ project.subtitle }} - {{ project.teacher }}</p>
+    <hr class="my-4">
+    <p>{{ project.description }}</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'teacher_review' project.pk %}" role="button">Review</a>
+</div>
+
+<div class="container">
+    <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+            1st Submisson
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ project.first_def_title }}</h5>
+            {% if project.first_def_title == "Soon" %}
+            <p class="card-text">{{ project.first_def_time }}</p>
+            <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.first_def_desc }}</p>
+            <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+            2nd Submisson
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ project.mid_def_title }}</h5>
+            {% if project.mid_def_title == "Soon" %}
+            <p class="card-text">{{ project.mid_def_time }}</p>
+            <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.mid_def_desc }}</p>
+            <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+            Final Submisson
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ project.final_def_title }}</h5>
+            {% if project.final_def_title == "Soon" %}
+            <p class="card-text">{{ project.final_def_time }}</p>
+            <a href="#" class="btn btn-primary disabled" disabled>Full Report</a>
+            {% else %}
+            <p class="card-text">{{ project.final_def_desc }}</p>
+            <a href="#" class="btn btn-primary">Full Report</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
